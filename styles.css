@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg, #ff6f61, #ff9966, #ff9a9e);
+    background-size: 600% 600%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: gradientBackground 15s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    transform: translateY(100vh);
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(0); }
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: imgPop 1s ease-in-out forwards 0.5s;
+}
+
+@keyframes imgPop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.profile-name {
+    margin: 10px 0;
+    font-size: 26px;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 1s;
+}
+
+.profile-description {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 1.2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    animation: linksFadeIn 1s ease-in-out forwards 1.5s;
+}
+
+@keyframes linksFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    background: linear-gradient(45deg, #e74c3c, #ff6f61);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: linkPop 1s ease-in-out forwards;
+}
+
+@keyframes linkPop {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.link:hover {
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+    transform: translateY(-5px);
+}
